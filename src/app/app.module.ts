@@ -3,9 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, RouterOutlet, Routes } from '@angular/router';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +11,11 @@ import { MainViewComponent } from './main-view/main-view.component';
 import { Constants } from 'Constants';
 import { AboutViewComponent } from './about-view/about-view.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {
+  MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule
+} from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
 
 const routes: Routes = [
   { path: '', component: MainViewComponent,
@@ -31,7 +34,7 @@ const routes: Routes = [
     AppComponent,
     MainViewComponent,
     AboutViewComponent,
-    ContactViewComponent
+    ContactViewComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -43,6 +46,9 @@ const routes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    LayoutModule,
+    MatSidenavModule,
+    FlexLayoutModule
   ],
   providers: [],
   exports: [RouterOutlet],
