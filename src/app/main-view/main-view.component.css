@@ -93,5 +93,14 @@ button{
 }
 
 .example-container {
-    background-color: gray;
+    height: 90%;
+}
+
+.sideNav {
+    width: 10%;
+}
+
+.navbar-item:hover {
+    color: rgb(160, 160, 160) !important;
+    cursor: pointer;
 }
