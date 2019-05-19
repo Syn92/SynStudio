@@ -1,36 +1,41 @@
-<div> 
-    <mat-toolbar color="primary">
-      <div fxShow="true" fxHide.gt-sm="true">
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
+<section class="hero is-fullheight">
+  <div class="hero-head">
+          <div class="columns is-mobile is-marginless heading text-weight-bold">
+              <div class="column left has-text-black">
+                      <p>SynStudio </p>
+              </div>
+              <div class="column center desktop" id="models">
+                  <p class="navbar-item has-text-black">PANAMERA</p>
+                  <p class="navbar-item has-text-black" style="text-shadow: 0.1px 0.1px #fff">911</p>
+                  <p class="navbar-item has-text-black">CAYENNE</p>
+                  <p class="navbar-item has-text-black">MACAN</p>
+                  
+              </div>
+              <div class="column right">
+                  <p class="navbar-item desktop has-text-black">SHOP     </p>
+                  <p class="navbar-item desktop has-text-black">SIGN IN  </p>
+                  <button (click)="sideNav.toggle()" mat-button><figure class="navbar-item has-text-black">
+                    <i class="fas fa-bars"></i>
+                  </figure></button>
+                  
+              </div>
+              <mat-sidenav-container class="example-container">
+                <mat-sidenav #sideNav mode="over" opened="false" [position]="end">
+                    <p class="navbar-item has-text-black">PANAMERA</p>
+                    <p class="nav-item has-text-black" style="text-shadow: 0.1px 0.1px #fff">911</p>
+                    <p class="nav-item has-text-black">CAYENNE</p>
+                    <p class="nav-item has-text-black">MACAN</p>
+                </mat-sidenav>
+                <mat-sidenav-content>
+                </mat-sidenav-content>
+                <p class="navbar-item has-text-black">PANAMERA</p>
+                <p class="nav-item has-text-black" style="text-shadow: 0.1px 0.1px #fff">911</p>
+                <p class="nav-item has-text-black">CAYENNE</p>
+                <p class="nav-item has-text-black">MACAN</p>
+              </mat-sidenav-container>
+          </div>
+          
       </div>
-  
-  
-      <span class="example-spacer"></span>
-      <div fxShow="true" fxHide.lt-md="true">
-        <a mat-button routerLink="/about-us">About us</a>
-        <a mat-button routerLink="/prices">Prices</a>
-        <a mat-button routerLink="/start-page">Start page</a>
-        <a mat-button routerLink="/offer">Offer</a>
-        <a mat-button routerLink="/contact">Contact</a>
-      </div>
-      <span class="example-spacer"></span>
-  
-    </mat-toolbar>
-    <mat-sidenav-container fxFlexFill class="example-container">
-  
-      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
-        <div fxLayout="column">
-          <a mat-button routerLink="/about-us">About us</a>
-          <a mat-button routerLink="/prices">Prices</a>
-          <a mat-button routerLink="/start-page">Start page</a>
-          <a mat-button routerLink="/offer">Offer</a>
-          <a mat-button routerLink="/contact">Contact</a>
-        </div>
-      </mat-sidenav>
-      <mat-sidenav-content fxFlexFill>
-        Awesome content
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
+</section>
+      
+      

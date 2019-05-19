@@ -6,7 +6,7 @@ div {
 }
 a{
     text-decoration: none;
-    font-size: 110%;
+    font-size: 100%;
     white-space: normal;
 }
 button{
@@ -24,3 +24,74 @@ button{
       font-size: 200%;
       text-align: center;
   }  
+
+::ng-deep mat-toolbar {
+    height: 150% !important;
+}
+
+.center, .center-column, .top, .right, .bottom, .left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-column {
+    flex-direction: column;
+}
+
+.top    { align-items:     flex-start; }
+.right  { justify-content: flex-end;   }
+.bottom { align-items:     flex-end;   }
+.left   { justify-content: flex-start; }
+
+.single-spaced, .single-spaced * {
+    line-height: 1;
+}
+
+@media (max-width: 1024px) {
+	.desktop {
+		display: none;
+    }
+    #grid {
+        grid-template-areas:
+            "a a a"
+            "b c d"
+            "e e e";
+    }
+
+}
+#models{text-shadow: 0.5px 0.5px rgb(0, 0, 0);}
+.navbar-item{font-weight: 900;
+    color: black}
+
+#a { grid-area: a; }
+#b { grid-area: b; }
+#c { grid-area: c; }
+#d { grid-area: d; }
+#e { grid-area: e; }
+
+#grid {
+    display: grid;
+    grid-template-areas:
+        "a a a a"
+        "b c d e";
+
+        grid-row-gap: 1rem;
+}
+
+@media (max-width: 1024px) {
+    #grid {
+        grid-template-areas:
+            "a a a"
+            "b c d"
+            "e e e";
+    }
+    #e{
+        width: 280px;
+        margin: auto; 
+    }
+}
+
+.example-container {
+    background-color: gray;
+}
