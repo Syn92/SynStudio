@@ -16,17 +16,15 @@ import {
   MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
+import {MatDividerModule} from '@angular/material/divider'
 
 const routes: Routes = [
-  { path: '', component: MainViewComponent,
-  children: [
-    {
-      path: Constants.ABOUT_PATH, component: AboutViewComponent,
-    },
-    {
-      path: Constants.CONTACT_PATH, component: ContactViewComponent,
-    }
-  ]},
+  {
+    path: Constants.ABOUT_PATH, component: AboutViewComponent,
+  },
+  {
+    path: Constants.CONTACT_PATH, component: ContactViewComponent,
+  }
 ];
 
 @NgModule({
@@ -48,7 +46,8 @@ const routes: Routes = [
     MatButtonModule,
     LayoutModule,
     MatSidenavModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDividerModule
   ],
   providers: [],
   exports: [RouterOutlet],

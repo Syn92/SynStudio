@@ -3,10 +3,10 @@
                       <p>SynStudio </p>
               </div>
               <div class="column center desktop" id="models">
-                  <p class="navbar-item has-text-black">Accueil</p>
+                  <p class="navbar-item has-text-black" routerLink="/">Accueil</p>
                   <p class="navbar-item has-text-black">Site</p>
-                  <p class="navbar-item has-text-black">À propos</p>
-                  <p class="navbar-item has-text-black">Contact</p>
+                  <p class="navbar-item has-text-black" routerLink="/about">À propos</p>
+                  <p class="navbar-item has-text-black" routerLink="/contact">Contact</p>
                   
               </div>
               <div class="column right">
@@ -16,23 +16,34 @@
                     <i class="fas fa-bars"></i>
                   </figure></button>
                   
-              </div>
-              
+                </div>
+                
             </div>
-                <mat-sidenav-container class="example-container">
-                    <mat-sidenav class="sideNav" #sideNav mode="over" opened="false" role="navigation" position="end">
-                        <p fxHide.gt-md class="navbar-item has-text-black">Accueil</p>
-                        <p fxHide.gt-md class="navbar-item has-text-black">Site</p>
-                        <p fxHide.gt-md class="navbar-item has-text-black">À propos</p>
-                        <p fxHide.gt-md class="navbar-item has-text-black">Contact</p>
-                        <p class="navbar-item has-text-black">CV</p>
-                    </mat-sidenav>
-                    <mat-sidenav-content>
-                    </mat-sidenav-content>
-                    <p class="has-text-black">Home</p>
-                    <p class="nav-item has-text-black" style="text-shadow: 0.1px 0.1px #fff">911</p>
-                    <p class="nav-item has-text-black">Home</p>
-                    <p class="nav-item has-text-black">MACAN</p>
-                  </mat-sidenav-container>    
+                    <mat-sidenav-container class="example-container">
+                        <mat-sidenav class="sideNav" #sideNav mode="over" opened="false" role="navigation" position="end">
+                            <p style="padding: 10px" class="right" (click)="sideNav.toggle()"><mat-icon class="cross">close</mat-icon></p>
+                            <p fxHide.gt-md class="navbar-item center has-text-black">Accueil</p>
+                            <mat-divider fxHide.gt-md class="center"></mat-divider>
+                            <p fxHide.gt-md class="navbar-item has-text-black">Site</p>
+                            <mat-divider  fxHide.gt-md></mat-divider>
+                            <p fxHide.gt-md class="navbar-item has-text-black">À propos</p>
+                            <mat-divider fxHide.gt-md></mat-divider>
+                            <p fxHide.gt-md class="navbar-item has-text-black">Contact</p>
+                            <mat-divider fxHide.gt-md></mat-divider>
+                            <p class="navbar-item center has-text-black">CV</p>
+                            <mat-divider class="center"></mat-divider>
+                            <p class="navbar-item center has-text-black">Categorie</p>
+                            <mat-divider class="center"></mat-divider>
+                            <p class="navbar-item center has-text-black">Categorie</p>
+                            <mat-divider></mat-divider>
+                            <p class="navbar-item center has-text-black">Categorie</p>
+                            <mat-divider></mat-divider>
+                            <p class="navbar-item center has-text-black">Categorie</p>
+      
+                        </mat-sidenav>
+                        <mat-sidenav-content style="display: inline-block">
+                            <router-outlet></router-outlet>
+                        </mat-sidenav-content>
+                      </mat-sidenav-container>    
       
       

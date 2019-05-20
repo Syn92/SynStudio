@@ -1,34 +1,3 @@
-.companyName{
-    font-size: 150%;
-}
-div {
-    overflow: inherit;
-}
-a{
-    text-decoration: none;
-    font-size: 100%;
-    white-space: normal;
-}
-button{
-    font-size: 110%;
-    min-width: min-content;
-}
-.example-icon {
-    padding: 0 14px;
-  }
-
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-  .mat-sidenav-content{
-      font-size: 200%;
-      text-align: center;
-  }  
-
-::ng-deep mat-toolbar {
-    height: 150% !important;
-}
-
 .center, .center-column, .top, .right, .bottom, .left {
 	display: flex;
 	justify-content: center;
@@ -93,21 +62,39 @@ button{
 }
 
 .example-container {
-    height: 90%;
-    overflow-y: auto !important;
+    display: table-row
 }
 
 .sideNav {
     width: 10%;
 }
 
+.cross:hover {
+    color: rgb(160, 160, 160) !important;
+    cursor: pointer;
+}
 .navbar-item:hover {
     color: rgb(160, 160, 160) !important;
     cursor: pointer;
+}
+
+.navbar-item:focus {
+    outline: none;
 }
 
 @media only screen and (max-width: 600px) {
     .sideNav {
         width: auto;
     }
-} 
+}
+
+::ng-deep mat-divider {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* @media (max-height: 900px){
+    .example-container {
+        height: 90.5vh;
+    }
+} */
