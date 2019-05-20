@@ -107,6 +107,6 @@
 
 @media (min-height: 801px) and (max-height: 900px){
     .example-container {
-        height: 92.5vh;
+        height: 92vh;
     }
 }
