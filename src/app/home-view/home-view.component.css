@@ -1,0 +1,15 @@
+.newsContainer {
+    overflow: auto;
+    line-height: 1 !important;
+
+}
+
+article {
+    font-size: 1vw;
+}
+
+@media (max-width: 900px){
+    article {
+        font-size: 2vw;
+    }
+}

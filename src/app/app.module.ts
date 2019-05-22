@@ -11,14 +11,19 @@ import { MainViewComponent } from './main-view/main-view.component';
 import { Constants } from 'Constants';
 import { AboutViewComponent } from './about-view/about-view.component';
 import { ContactViewComponent } from './contact-view/contact-view.component';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MatIconModule, MatButtonModule, MatSidenavModule, MatToolbarModule
 } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import {MatDividerModule} from '@angular/material/divider'
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { HomeViewComponent } from './home-view/home-view.component'
 
 const routes: Routes = [
+  {
+    path: '', component: HomeViewComponent,
+  },
   {
     path: Constants.ABOUT_PATH, component: AboutViewComponent,
   },
@@ -33,6 +38,7 @@ const routes: Routes = [
     MainViewComponent,
     AboutViewComponent,
     ContactViewComponent,
+    HomeViewComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -47,7 +53,8 @@ const routes: Routes = [
     LayoutModule,
     MatSidenavModule,
     FlexLayoutModule,
-    MatDividerModule
+    MatDividerModule,
+    MatGridListModule
   ],
   providers: [],
   exports: [RouterOutlet],

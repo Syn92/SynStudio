@@ -22,7 +22,6 @@
                     <mat-sidenav-container class="example-container">
                         <mat-sidenav class="sideNav" #sideNav mode="over" opened="false" role="navigation" position="end">
                             <mat-divider></mat-divider>
-                            <!-- <p style="padding: 10px" class="right" (click)="sideNav.toggle()"><mat-icon class="cross">close</mat-icon></p> -->
                             <p fxHide.gt-md class="navbar-item side center has-text-black">Accueil</p>
                             <mat-divider fxHide.gt-md class="center"></mat-divider>
                             <p fxHide.gt-md class="navbar-item side center has-text-black">Site</p>
@@ -42,7 +41,7 @@
                             <p class="navbar-item side center has-text-black">Categorie</p>
       
                         </mat-sidenav>
-                        <mat-sidenav-content style="display: inline-block">
+                        <mat-sidenav-content>
                             <router-outlet></router-outlet>
                         </mat-sidenav-content>
                       </mat-sidenav-container>    
