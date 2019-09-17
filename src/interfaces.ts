@@ -1,5 +1,10 @@
 export interface Inews {
-    date: string;
+    id?: number;
+    date?: string;
     message: string;
-    author: string;
+    author?: string;
+};
+
+export interface Message {
+    message: string;
 };

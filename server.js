@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
 
-var CONTACTS_COLLECTION = "contacts";
+var NEWS_COLLECTION = "news";
 
 var app = express();
 app.use(bodyParser.json());
@@ -41,37 +41,42 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
+app.post("/api/admin", function(req, res) {
+  if(req.body.message === "1234"){
+    res.send("true").status(200);
+  } else {
+    res.send("false").status(400);
+  }
+  console.log(res);
+})
+
 // /*  "/api/contacts"
 //  *    GET: finds all contacts
 //  *    POST: creates a new contact
 //  */
 
-// app.get("/api/contacts", function(req, res) {
-//   db.collection(CONTACTS_COLLECTION).find({}).toArray(function(err, docs) {
-//     if (err) {
-//       handleError(res, err.message, "Failed to get contacts.");
-//     } else {
-//       res.status(200).json(docs);
-//     }
-//   });
-// });
+app.get("/api/news", function(req, res) {
+  db.collection(NEWS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get news.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+});
 
-// app.post("/api/contacts", function(req, res) {
-//   var newContact = req.body;
-//   newContact.createDate = new Date();
+app.post("/api/news", function(req, res) {
+  var newNews = req.body;
+  newNews.date = new Date();
 
-//   if (!req.body.name) {
-//     handleError(res, "Invalid user input", "Must provide a name.", 400);
-//   } else {
-//     db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
-//       if (err) {
-//         handleError(res, err.message, "Failed to create new contact.");
-//       } else {
-//         res.status(201).json(doc.ops[0]);
-//       }
-//     });
-//   }
-// });
+    db.collection(NEWS_COLLECTION).insertOne(newNews, function(err, doc) {
+      if (err) {
+        handleError(res, err.message, "Failed to create new news.");
+      } else {
+        res.status(201).json(doc);
+      }
+    });
+});
 
 // /*  "/api/contacts/:id"
 //  *    GET: find contact by id

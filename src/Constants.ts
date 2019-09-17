@@ -1,5 +1,6 @@
 export class Constants {
     // public static readonly
+    public static readonly Base_Url: string = 'http://localhost:8080/';
     public static readonly appName: string = 'SynStudio';
     public static readonly about: string = 'À propos';
     public static readonly contact: string = 'Contact';

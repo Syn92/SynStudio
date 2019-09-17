@@ -18,11 +18,17 @@ import {
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { HomeViewComponent } from './home-view/home-view.component'
+import { HomeViewComponent } from './home-view/home-view.component';
+import { AdminViewComponent } from './admin-view/admin-view.component'
+import { HttpClientModule } from '@angular/common/http'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   {
     path: '', component: HomeViewComponent,
+  },
+  {
+    path: 'admin', component: AdminViewComponent,
   },
   {
     path: Constants.ABOUT_PATH, component: AboutViewComponent,
@@ -39,6 +45,7 @@ const routes: Routes = [
     AboutViewComponent,
     ContactViewComponent,
     HomeViewComponent,
+    AdminViewComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -54,9 +61,10 @@ const routes: Routes = [
     MatSidenavModule,
     FlexLayoutModule,
     MatDividerModule,
-    MatGridListModule
+    MatGridListModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   exports: [RouterOutlet],
   bootstrap: [AppComponent]
 })
